@@ -1,10 +1,12 @@
 import SwiftUI
 
 struct AllMedicinesView: View {
-    @ObservedObject var viewModel = MedicineStockViewModel()
+    @EnvironmentObject var viewModel: MedicineStockViewModel
     @State private var filterText: String = ""
     @State private var sortOption: SortOption = .none
-
+    @State private var isPresentingAddMedicineSheet = false
+    
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -13,9 +15,12 @@ struct AllMedicinesView: View {
                     TextField("Filter by name", text: $filterText)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.leading, 10)
+                        .onChange(of: filterText) {
+                            viewModel.fetchDynamicMedicines(filter: filterText, sortOption: sortOption)
+                        }
                     
                     Spacer()
-
+                    
                     Picker("Sort by", selection: $sortOption) {
                         Text("None").tag(SortOption.none)
                         Text("Name").tag(SortOption.name)
@@ -23,13 +28,16 @@ struct AllMedicinesView: View {
                     }
                     .pickerStyle(MenuPickerStyle())
                     .padding(.trailing, 10)
+                    .onChange(of: sortOption) {
+                        viewModel.fetchDynamicMedicines(filter: filterText, sortOption: sortOption)
+                    }
                 }
                 .padding(.top, 10)
                 
                 // Liste des Médicaments
                 List {
-                    ForEach(filteredAndSortedMedicines, id: \.id) { medicine in
-                        NavigationLink(destination: MedicineDetailView(medicine: medicine, viewModel: viewModel)) {
+                    ForEach(viewModel.medicines, id: \.id) { medicine in
+                        NavigationLink(destination: MedicineDetailView(medicine: medicine)) {
                             VStack(alignment: .leading) {
                                 Text(medicine.name)
                                     .font(.headline)
@@ -41,45 +49,20 @@ struct AllMedicinesView: View {
                 }
                 .navigationBarTitle("All Medicines")
                 .navigationBarItems(trailing: Button(action: {
-                    viewModel.addRandomMedicine(user: "test_user") // Remplacez par l'utilisateur actuel
+                    isPresentingAddMedicineSheet = true
                 }) {
                     Image(systemName: "plus")
                 })
+                .sheet(isPresented: $isPresentingAddMedicineSheet) {
+                    AddMedicineSheetView()
+                        .environmentObject(viewModel)
+                }
             }
         }
         .onAppear {
-            viewModel.fetchMedicines()
+            viewModel.fetchDynamicMedicines(filter: filterText, sortOption: sortOption)
         }
     }
-    
-    var filteredAndSortedMedicines: [Medicine] {
-        var medicines = viewModel.medicines
-
-        // Filtrage
-        if !filterText.isEmpty {
-            medicines = medicines.filter { $0.name.lowercased().contains(filterText.lowercased()) }
-        }
-
-        // Tri
-        switch sortOption {
-        case .name:
-            medicines.sort { $0.name.lowercased() < $1.name.lowercased() }
-        case .stock:
-            medicines.sort { $0.stock < $1.stock }
-        case .none:
-            break
-        }
-
-        return medicines
-    }
-}
-
-enum SortOption: String, CaseIterable, Identifiable {
-    case none
-    case name
-    case stock
-
-    var id: String { self.rawValue }
 }
 
 struct AllMedicinesView_Previews: PreviewProvider {

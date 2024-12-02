@@ -1,18 +1,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var sessionViewModel: SessionViewModel
 
     var body: some View {
         Group {
-            if session.session != nil {
+            if sessionViewModel.session != nil {
                 MainTabView()
             } else {
                 LoginView()
             }
         }
         .onAppear {
-            session.listen()
+            sessionViewModel.listen()
         }
     }
 }

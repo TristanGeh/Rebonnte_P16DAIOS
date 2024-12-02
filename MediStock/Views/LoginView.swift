@@ -3,7 +3,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var session: SessionViewModel
 
     var body: some View {
         VStack {
@@ -16,12 +16,12 @@ struct LoginView: View {
             Button(action: {
                 session.signIn(email: email, password: password)
             }) {
-                Text("Login")
+                Text("Login")// styliser
             }
             Button(action: {
                 session.signUp(email: email, password: password)
             }) {
-                Text("Sign Up")
+                Text("Sign Up")// styliser
             }
         }
         .padding()
@@ -30,6 +30,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView().environmentObject(SessionStore())
+        LoginView().environmentObject(SessionViewModel())
     }
 }

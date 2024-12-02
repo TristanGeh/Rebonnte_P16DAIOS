@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct AisleListView: View {
-    @ObservedObject var viewModel = MedicineStockViewModel()
-
+    @EnvironmentObject var viewModel: MedicineStockViewModel
+    @State private var isPresentingAddMedicineSheet = false
+    
     var body: some View {
         NavigationView {
             List {
@@ -14,13 +15,17 @@ struct AisleListView: View {
             }
             .navigationBarTitle("Aisles")
             .navigationBarItems(trailing: Button(action: {
-                viewModel.addRandomMedicine(user: "test_user") // Remplacez par l'utilisateur actuel
+                isPresentingAddMedicineSheet = true
             }) {
                 Image(systemName: "plus")
             })
+            .sheet(isPresented: $isPresentingAddMedicineSheet) {
+                AddMedicineSheetView()
+                    .environmentObject(viewModel)
+            }
         }
         .onAppear {
-            viewModel.fetchAisles()
+            viewModel.fetchMedicines()
         }
     }
 }
