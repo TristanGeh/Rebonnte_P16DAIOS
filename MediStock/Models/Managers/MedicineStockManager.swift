@@ -5,8 +5,14 @@
 
 import Foundation
 
+extension MedicineStockManager: MedicineStockManagerProtocol {}
+
 class MedicineStockManager: ObservableObject {
-    private let service = FirebaseService()
+    private let service: FirebaseServiceProtocol
+    
+    init(service: FirebaseServiceProtocol = FirebaseService()) {
+        self.service = service
+    }
     
     
     func fetchMedicines(completion: @escaping (Result<[Medicine], Error>) -> Void) {
@@ -57,6 +63,10 @@ class MedicineStockManager: ObservableObject {
     
     func updateMedicine(medicine: Medicine, completion: @escaping (Result<Void, Error>) -> Void) {
         service.updateMedicine(medicine: medicine, completion: completion)
+    }
+    
+    func deleteMedicines(by ids: [String], completion: @escaping (Result<Void, Error>) -> Void) {
+        service.deleteMedicines(by: ids, completion: completion)
     }
     
 }

@@ -15,7 +15,7 @@ enum SortOption: String, CaseIterable, Identifiable {
     var id: String { self.rawValue }
 }
 
-class FirebaseService {
+class FirebaseService: FirebaseServiceProtocol {
     private var db = Firestore.firestore()
     
     func fetchListMedicines(completion: @escaping (Result<[Medicine], Error>) -> Void) {
@@ -131,4 +131,21 @@ class FirebaseService {
                 }
             }
         }
+    
+    func deleteMedicines(by ids: [String], completion: @escaping (Result<Void, Error>) -> Void) {
+        let batch = db.batch()
+        
+        ids.forEach { id in
+            let documentRef = db.collection("medicines").document(id)
+            batch.deleteDocument(documentRef)
+        }
+        
+        batch.commit { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
+        }
+    }
 }

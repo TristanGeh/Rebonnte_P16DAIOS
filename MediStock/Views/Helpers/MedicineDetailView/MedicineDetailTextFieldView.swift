@@ -19,7 +19,7 @@ struct MedicineDetailTextFieldView: View {
             Text(medicineInformation)
                 .font(.headline)
             TextField(medicineInformation, text: $text, onCommit: {
-                viewModel.updateMedicine(medicine, user: session.session?.uid ?? "")
+                viewModel.updateMedicine(medicine, user: session.session?.email ?? "")
             })
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding(.bottom, 10)

@@ -16,20 +16,20 @@ struct MedicineStock: View {
                 .font(.headline)
             HStack {
                 Button(action: {
-                    viewModel.decreaseStock(medicine, user: session.session?.uid ?? "")
+                    viewModel.decreaseStock(medicine, user: session.session?.email ?? "")
                 }) {
                     Image(systemName: "minus.circle")
                         .font(.title)
                         .foregroundColor(.red)
                 }
                 TextField("Stock", value: $medicine.stock, formatter: NumberFormatter(), onCommit: {
-                    viewModel.updateMedicine(medicine, user: session.session?.uid ?? "")
+                    viewModel.updateMedicine(medicine, user: session.session?.email ?? "")
                 })
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.numberPad)
                 .frame(width: 100)
                 Button(action: {
-                    viewModel.increaseStock(medicine, user: session.session?.uid ?? "")
+                    viewModel.increaseStock(medicine, user: session.session?.email ?? "")
                 }) {
                     Image(systemName: "plus.circle")
                         .font(.title)

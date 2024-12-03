@@ -11,9 +11,6 @@
 		53E0D8992C06084700DE1134 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8982C06084700DE1134 /* ContentView.swift */; };
 		53E0D89B2C06084900DE1134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E0D89A2C06084900DE1134 /* Assets.xcassets */; };
 		53E0D89E2C06084900DE1134 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E0D89D2C06084900DE1134 /* Preview Assets.xcassets */; };
-		53E0D8A82C06084900DE1134 /* MediStockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8A72C06084900DE1134 /* MediStockTests.swift */; };
-		53E0D8B22C06084900DE1134 /* MediStockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8B12C06084900DE1134 /* MediStockUITests.swift */; };
-		53E0D8B42C06084900DE1134 /* MediStockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8B32C06084900DE1134 /* MediStockUITestsLaunchTests.swift */; };
 		53E0D8C22C06092E00DE1134 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 53E0D8C12C06092E00DE1134 /* FirebaseAnalytics */; };
 		53E0D8C42C06092E00DE1134 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 53E0D8C32C06092E00DE1134 /* FirebaseAnalyticsOnDeviceConversion */; };
 		53E0D8C62C06092E00DE1134 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 53E0D8C52C06092E00DE1134 /* FirebaseAnalyticsSwift */; };
@@ -38,7 +35,6 @@
 		53E0D8EC2C06717200DE1134 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8EB2C06717200DE1134 /* MainTabView.swift */; };
 		53E0D8EE2C06718100DE1134 /* AllMedicinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8ED2C06718100DE1134 /* AllMedicinesView.swift */; };
 		E03393D72CF8DB1C006B03BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53E0D8E32C0660FD00DE1134 /* GoogleService-Info.plist */; };
-		E03393D82CF8DB1C006B03BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53E0D8E32C0660FD00DE1134 /* GoogleService-Info.plist */; };
 		E03393DE2CFC9ADA006B03BE /* MedicineStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03393DD2CFC9ADA006B03BE /* MedicineStock.swift */; };
 		E03393E12CFC9C9C006B03BE /* MedicineDetailTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03393E02CFC9C9C006B03BE /* MedicineDetailTextFieldView.swift */; };
 		E03393E32CFCAA2D006B03BE /* HistorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03393E22CFCAA2D006B03BE /* HistorySection.swift */; };
@@ -47,17 +43,22 @@
 		E033949D2CFD1FC2006B03BE /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033949C2CFD1FC2006B03BE /* SessionManager.swift */; };
 		E033949F2CFD2178006B03BE /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033949E2CFD2178006B03BE /* SessionViewModel.swift */; };
 		E03394A12CFDC0D4006B03BE /* AddMedicineSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03394A02CFDC0D4006B03BE /* AddMedicineSheetView.swift */; };
+		E03394A42CFF5AAF006B03BE /* SessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03394A32CFF5AAE006B03BE /* SessionProtocol.swift */; };
+		E03394A82CFF5B62006B03BE /* MockSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03394A72CFF5B61006B03BE /* MockSessionStore.swift */; };
+		E03394AD2CFF5BCC006B03BE /* SessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03394AC2CFF5BCC006B03BE /* SessionManagerTests.swift */; };
+		E03395602CFF62AB006B03BE /* SessionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033955F2CFF62AB006B03BE /* SessionStoreTests.swift */; };
+		E03395622CFF6E5D006B03BE /* MockSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03395612CFF6E5D006B03BE /* MockSessionManager.swift */; };
+		E03395642CFF6F2B006B03BE /* SessionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03395632CFF6F2B006B03BE /* SessionViewModelTests.swift */; };
+		E03395692CFF75D0006B03BE /* MedicineProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03395682CFF75D0006B03BE /* MedicineProtocols.swift */; };
+		E033956B2CFF7634006B03BE /* MockFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033956A2CFF7634006B03BE /* MockFirebaseService.swift */; };
+		E033956D2CFF767D006B03BE /* FirebaseServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033956C2CFF767D006B03BE /* FirebaseServiceTests.swift */; };
+		E033956F2CFF77B2006B03BE /* MedicineManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033956E2CFF77B2006B03BE /* MedicineManagerTests.swift */; };
+		E03395712CFF78BD006B03BE /* MedicineStockManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03395702CFF78BD006B03BE /* MedicineStockManagerMock.swift */; };
+		E03395732CFF78FC006B03BE /* MedicineViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03395722CFF78FC006B03BE /* MedicineViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		53E0D8A42C06084900DE1134 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 53E0D88B2C06084700DE1134 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 53E0D8922C06084700DE1134;
-			remoteInfo = MediStock;
-		};
-		53E0D8AE2C06084900DE1134 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 53E0D88B2C06084700DE1134 /* Project object */;
 			proxyType = 1;
@@ -73,10 +74,6 @@
 		53E0D89A2C06084900DE1134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53E0D89D2C06084900DE1134 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		53E0D8A32C06084900DE1134 /* MediStockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediStockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		53E0D8A72C06084900DE1134 /* MediStockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediStockTests.swift; sourceTree = "<group>"; };
-		53E0D8AD2C06084900DE1134 /* MediStockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediStockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		53E0D8B12C06084900DE1134 /* MediStockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediStockUITests.swift; sourceTree = "<group>"; };
-		53E0D8B32C06084900DE1134 /* MediStockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediStockUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		53E0D8D72C06097900DE1134 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		53E0D8D92C06098F00DE1134 /* MedicineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineListView.swift; sourceTree = "<group>"; };
 		53E0D8DB2C06099C00DE1134 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
@@ -97,6 +94,18 @@
 		E033949C2CFD1FC2006B03BE /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		E033949E2CFD2178006B03BE /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
 		E03394A02CFDC0D4006B03BE /* AddMedicineSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineSheetView.swift; sourceTree = "<group>"; };
+		E03394A32CFF5AAE006B03BE /* SessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProtocol.swift; sourceTree = "<group>"; };
+		E03394A72CFF5B61006B03BE /* MockSessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSessionStore.swift; sourceTree = "<group>"; };
+		E03394AC2CFF5BCC006B03BE /* SessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerTests.swift; sourceTree = "<group>"; };
+		E033955F2CFF62AB006B03BE /* SessionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStoreTests.swift; sourceTree = "<group>"; };
+		E03395612CFF6E5D006B03BE /* MockSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSessionManager.swift; sourceTree = "<group>"; };
+		E03395632CFF6F2B006B03BE /* SessionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModelTests.swift; sourceTree = "<group>"; };
+		E03395682CFF75D0006B03BE /* MedicineProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineProtocols.swift; sourceTree = "<group>"; };
+		E033956A2CFF7634006B03BE /* MockFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirebaseService.swift; sourceTree = "<group>"; };
+		E033956C2CFF767D006B03BE /* FirebaseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServiceTests.swift; sourceTree = "<group>"; };
+		E033956E2CFF77B2006B03BE /* MedicineManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineManagerTests.swift; sourceTree = "<group>"; };
+		E03395702CFF78BD006B03BE /* MedicineStockManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineStockManagerMock.swift; sourceTree = "<group>"; };
+		E03395722CFF78FC006B03BE /* MedicineViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,13 +134,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		53E0D8AA2C06084900DE1134 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -140,7 +142,6 @@
 			children = (
 				53E0D8952C06084700DE1134 /* MediStock */,
 				53E0D8A62C06084900DE1134 /* MediStockTests */,
-				53E0D8B02C06084900DE1134 /* MediStockUITests */,
 				53E0D8942C06084700DE1134 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,7 +151,6 @@
 			children = (
 				53E0D8932C06084700DE1134 /* MediStock.app */,
 				53E0D8A32C06084900DE1134 /* MediStockTests.xctest */,
-				53E0D8AD2C06084900DE1134 /* MediStockUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,18 +182,10 @@
 		53E0D8A62C06084900DE1134 /* MediStockTests */ = {
 			isa = PBXGroup;
 			children = (
-				53E0D8A72C06084900DE1134 /* MediStockTests.swift */,
+				E03395652CFF70A3006B03BE /* Medicines */,
+				E03394A52CFF5B3B006B03BE /* Session */,
 			);
 			path = MediStockTests;
-			sourceTree = "<group>";
-		};
-		53E0D8B02C06084900DE1134 /* MediStockUITests */ = {
-			isa = PBXGroup;
-			children = (
-				53E0D8B12C06084900DE1134 /* MediStockUITests.swift */,
-				53E0D8B32C06084900DE1134 /* MediStockUITestsLaunchTests.swift */,
-			);
-			path = MediStockUITests;
 			sourceTree = "<group>";
 		};
 		E03393D92CFB797B006B03BE /* Views */ = {
@@ -213,6 +205,7 @@
 		E03393DA2CFB7983006B03BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E03394A22CFF5A81006B03BE /* Protocols */,
 				E033949B2CFD1FA4006B03BE /* Managers */,
 				E03393E42CFCBCD4006B03BE /* Firebase */,
 				53E0D8E92C066F7A00DE1134 /* HistoryEntry.swift */,
@@ -275,6 +268,71 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		E03394A22CFF5A81006B03BE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E03394A32CFF5AAE006B03BE /* SessionProtocol.swift */,
+				E03395682CFF75D0006B03BE /* MedicineProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E03394A52CFF5B3B006B03BE /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				E03394A92CFF5B85006B03BE /* Tests */,
+				E03394A62CFF5B47006B03BE /* Mocks */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		E03394A62CFF5B47006B03BE /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E03394A72CFF5B61006B03BE /* MockSessionStore.swift */,
+				E03395612CFF6E5D006B03BE /* MockSessionManager.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E03394A92CFF5B85006B03BE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E03394AC2CFF5BCC006B03BE /* SessionManagerTests.swift */,
+				E033955F2CFF62AB006B03BE /* SessionStoreTests.swift */,
+				E03395632CFF6F2B006B03BE /* SessionViewModelTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		E03395652CFF70A3006B03BE /* Medicines */ = {
+			isa = PBXGroup;
+			children = (
+				E03395672CFF70B7006B03BE /* Tests */,
+				E03395662CFF70B1006B03BE /* Mocks */,
+			);
+			path = Medicines;
+			sourceTree = "<group>";
+		};
+		E03395662CFF70B1006B03BE /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E033956A2CFF7634006B03BE /* MockFirebaseService.swift */,
+				E03395702CFF78BD006B03BE /* MedicineStockManagerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E03395672CFF70B7006B03BE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E033956C2CFF767D006B03BE /* FirebaseServiceTests.swift */,
+				E033956E2CFF77B2006B03BE /* MedicineManagerTests.swift */,
+				E03395722CFF78FC006B03BE /* MedicineViewModelTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -326,24 +384,6 @@
 			productReference = 53E0D8A32C06084900DE1134 /* MediStockTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		53E0D8AC2C06084900DE1134 /* MediStockUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 53E0D8BD2C06084900DE1134 /* Build configuration list for PBXNativeTarget "MediStockUITests" */;
-			buildPhases = (
-				53E0D8A92C06084900DE1134 /* Sources */,
-				53E0D8AA2C06084900DE1134 /* Frameworks */,
-				53E0D8AB2C06084900DE1134 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				53E0D8AF2C06084900DE1134 /* PBXTargetDependency */,
-			);
-			name = MediStockUITests;
-			productName = MediStockUITests;
-			productReference = 53E0D8AD2C06084900DE1134 /* MediStockUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -358,10 +398,6 @@
 						CreatedOnToolsVersion = 15.4;
 					};
 					53E0D8A22C06084900DE1134 = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 53E0D8922C06084700DE1134;
-					};
-					53E0D8AC2C06084900DE1134 = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 53E0D8922C06084700DE1134;
 					};
@@ -385,7 +421,6 @@
 			targets = (
 				53E0D8922C06084700DE1134 /* MediStock */,
 				53E0D8A22C06084900DE1134 /* MediStockTests */,
-				53E0D8AC2C06084900DE1134 /* MediStockUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -409,14 +444,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		53E0D8AB2C06084900DE1134 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E03393D82CF8DB1C006B03BE /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -424,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E03394A42CFF5AAF006B03BE /* SessionProtocol.swift in Sources */,
 				53E0D8E22C065FFE00DE1134 /* AppDelegate.swift in Sources */,
 				53E0D8D82C06097900DE1134 /* LoginView.swift in Sources */,
 				53E0D8EA2C066F7A00DE1134 /* HistoryEntry.swift in Sources */,
@@ -441,6 +469,7 @@
 				E03393E62CFCBD3C006B03BE /* FirebaseService.swift in Sources */,
 				53E0D8EE2C06718100DE1134 /* AllMedicinesView.swift in Sources */,
 				E03393E12CFC9C9C006B03BE /* MedicineDetailTextFieldView.swift in Sources */,
+				E03395692CFF75D0006B03BE /* MedicineProtocols.swift in Sources */,
 				E03393DE2CFC9ADA006B03BE /* MedicineStock.swift in Sources */,
 				E03394A12CFDC0D4006B03BE /* AddMedicineSheetView.swift in Sources */,
 				E033949D2CFD1FC2006B03BE /* SessionManager.swift in Sources */,
@@ -452,16 +481,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53E0D8A82C06084900DE1134 /* MediStockTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		53E0D8A92C06084900DE1134 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				53E0D8B42C06084900DE1134 /* MediStockUITestsLaunchTests.swift in Sources */,
-				53E0D8B22C06084900DE1134 /* MediStockUITests.swift in Sources */,
+				E03394A82CFF5B62006B03BE /* MockSessionStore.swift in Sources */,
+				E033956F2CFF77B2006B03BE /* MedicineManagerTests.swift in Sources */,
+				E03395732CFF78FC006B03BE /* MedicineViewModelTests.swift in Sources */,
+				E03395642CFF6F2B006B03BE /* SessionViewModelTests.swift in Sources */,
+				E033956B2CFF7634006B03BE /* MockFirebaseService.swift in Sources */,
+				E03395602CFF62AB006B03BE /* SessionStoreTests.swift in Sources */,
+				E03395712CFF78BD006B03BE /* MedicineStockManagerMock.swift in Sources */,
+				E03395622CFF6E5D006B03BE /* MockSessionManager.swift in Sources */,
+				E03394AD2CFF5BCC006B03BE /* SessionManagerTests.swift in Sources */,
+				E033956D2CFF767D006B03BE /* FirebaseServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,11 +501,6 @@
 			isa = PBXTargetDependency;
 			target = 53E0D8922C06084700DE1134 /* MediStock */;
 			targetProxy = 53E0D8A42C06084900DE1134 /* PBXContainerItemProxy */;
-		};
-		53E0D8AF2C06084900DE1134 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 53E0D8922C06084700DE1134 /* MediStock */;
-			targetProxy = 53E0D8AE2C06084900DE1134 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -696,40 +720,6 @@
 			};
 			name = Release;
 		};
-		53E0D8BE2C06084900DE1134 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rebonnte.MediStockUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MediStock;
-			};
-			name = Debug;
-		};
-		53E0D8BF2C06084900DE1134 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rebonnte.MediStockUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MediStock;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -756,15 +746,6 @@
 			buildConfigurations = (
 				53E0D8BB2C06084900DE1134 /* Debug */,
 				53E0D8BC2C06084900DE1134 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		53E0D8BD2C06084900DE1134 /* Build configuration list for PBXNativeTarget "MediStockUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				53E0D8BE2C06084900DE1134 /* Debug */,
-				53E0D8BF2C06084900DE1134 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,5 +1,4 @@
 import Foundation
-import Firebase
 
 class MedicineStockViewModel: ObservableObject {
     @Published var medicines: [Medicine] = []
@@ -8,9 +7,11 @@ class MedicineStockViewModel: ObservableObject {
     
     var errorMessage: String = ""
     
-    private var db = Firestore.firestore()
+    private let manager: MedicineStockManagerProtocol
     
-    private let manager = MedicineStockManager()
+    init(manager: MedicineStockManagerProtocol = MedicineStockManager()) {
+        self.manager = manager
+    }
     
     func fetchMedicines() {
         manager.fetchMedicines { result in
@@ -18,17 +19,17 @@ class MedicineStockViewModel: ObservableObject {
             case .success(let medicines):
                 DispatchQueue.main.async {
                     let processedAisles = Array(Set(medicines.map { $0.aisle })).sorted()
-                    
-                    DispatchQueue.main.async {
-                        self.medicines = medicines
-                        self.aisles = processedAisles
-                    }
+                    self.medicines = medicines
+                    self.aisles = processedAisles
                 }
             case .failure(let error):
-                self.errorMessage = error.localizedDescription
+                DispatchQueue.main.async {
+                    self.errorMessage = error.localizedDescription
+                }
             }
         }
     }
+
     
     func fetchDynamicMedicines(filter: String? = nil, sortOption: SortOption = .none) {
         manager.fetchDynamicMedicines(filter: filter, sortOption: sortOption) { result in
@@ -49,9 +50,9 @@ class MedicineStockViewModel: ObservableObject {
                 let newMedicine = Medicine(name: name, stock: stock, aisle: aisle)
                 
                 self.addHistory(action: "Added \(name)",
-                           user: userEmail,
-                           medicineId: newMedicine.id ?? "",
-                           details: "Added new medicine")
+                                user: userEmail,
+                                medicineId: newMedicine.id ?? "",
+                                details: "Added new medicine")
                 
                 self.fetchMedicines()
             case .failure(let error):
@@ -60,13 +61,18 @@ class MedicineStockViewModel: ObservableObject {
         }
     }
     
-    func deleteMedicines(at offsets: IndexSet) {
-        offsets.map { medicines[$0] }.forEach { medicine in
-            if let id = medicine.id {
-                db.collection("medicines").document(id).delete { error in
-                    if let error = error {
-                        print("Error removing document: \(error)")
+    func deleteMedicines(_ ids: Set<String>, for aisle: String) {
+        let medicinesToDelete = medicines.filter{ ids.contains($0.id ?? "")}
+        
+        manager.deleteMedicines(by: medicinesToDelete.compactMap{ $0.id}) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self.medicines.removeAll { medicine in
+                        ids.contains(medicine.id ?? "")
                     }
+                case .failure(let error):
+                    self.errorMessage = "Failed to delete medicines: \(error.localizedDescription)"
                 }
             }
         }

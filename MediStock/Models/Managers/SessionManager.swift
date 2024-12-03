@@ -5,8 +5,12 @@
 
 import Foundation
 
-class SessionManager {
-    private let sessionStore = SessionStore()
+class SessionManager: SessionManagerProtocol {
+    private let sessionStore: SessionStoreProtocol
+    
+    init(sessionStore: SessionStoreProtocol) {
+        self.sessionStore = sessionStore
+    }
 
     func listen(completion: @escaping (User?) -> Void) {
         sessionStore.listen { user in

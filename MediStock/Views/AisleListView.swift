@@ -2,6 +2,7 @@ import SwiftUI
 
 struct AisleListView: View {
     @EnvironmentObject var viewModel: MedicineStockViewModel
+    @EnvironmentObject var session: SessionViewModel
     @State private var isPresentingAddMedicineSheet = false
     
     var body: some View {
@@ -14,11 +15,18 @@ struct AisleListView: View {
                 }
             }
             .navigationBarTitle("Aisles")
-            .navigationBarItems(trailing: Button(action: {
+            .navigationBarItems( leading: Button(action: {
+                session.signOut()
+            }) {
+                Text("Sign Out")
+                    .foregroundColor(.red)
+            },
+            trailing: Button(action: {
                 isPresentingAddMedicineSheet = true
             }) {
                 Image(systemName: "plus")
-            })
+            }
+        )
             .sheet(isPresented: $isPresentingAddMedicineSheet) {
                 AddMedicineSheetView()
                     .environmentObject(viewModel)

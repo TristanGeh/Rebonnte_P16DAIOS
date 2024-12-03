@@ -4,6 +4,7 @@ import Firebase
 class SessionStore: ObservableObject {
     @Published var session: User?
     private var handle: AuthStateDidChangeListenerHandle?
+    
 
     func listen(completion: @escaping (User?) -> Void) {
         handle = Auth.auth().addStateDidChangeListener { (_, user) in
@@ -64,3 +65,5 @@ struct User {
     var uid: String
     var email: String?
 }
+
+extension SessionStore: SessionStoreProtocol {}

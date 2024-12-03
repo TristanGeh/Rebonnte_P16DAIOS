@@ -2,6 +2,7 @@ import SwiftUI
 
 struct AllMedicinesView: View {
     @EnvironmentObject var viewModel: MedicineStockViewModel
+    @EnvironmentObject var session: SessionViewModel
     @State private var filterText: String = ""
     @State private var sortOption: SortOption = .none
     @State private var isPresentingAddMedicineSheet = false
@@ -48,11 +49,19 @@ struct AllMedicinesView: View {
                     }
                 }
                 .navigationBarTitle("All Medicines")
-                .navigationBarItems(trailing: Button(action: {
-                    isPresentingAddMedicineSheet = true
-                }) {
-                    Image(systemName: "plus")
-                })
+                .navigationBarItems(
+                    leading: Button(action: {
+                        session.signOut()
+                    }) {
+                        Text("Sign Out")
+                            .foregroundColor(.red)
+                    },
+                    trailing: Button(action: {
+                        isPresentingAddMedicineSheet = true
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                )
                 .sheet(isPresented: $isPresentingAddMedicineSheet) {
                     AddMedicineSheetView()
                         .environmentObject(viewModel)
