@@ -16,12 +16,16 @@ struct LoginView: View {
             Button(action: {
                 session.signIn(email: email, password: password)
             }) {
-                Text("Login")// styliser
+                Text("Login")
+                    .background(Color(.blue))
+                    .foregroundColor(.white)
             }
             Button(action: {
                 session.signUp(email: email, password: password)
             }) {
-                Text("Sign Up")// styliser
+                Text("Sign Up")
+                    .background(Color(.blue))
+                    .foregroundColor(.white)
             }
         }
         .padding()
